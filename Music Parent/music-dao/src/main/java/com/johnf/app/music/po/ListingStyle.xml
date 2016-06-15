@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="ListingStyle">
+	<resultMap type="listingStyle" id="listingStyleResult">
+		<id property="id" column="id" />
+		<result property="listingId" column="listingId"/>
+		<result property="style" column="style"/>
+		<result property="version" column="version"/>
+		
+		<!-- 关联的风格数据字典 -->
+		<association property="dicPo" column="style" select="selectStyleDic"></association>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="listingStyle">   
+	    insert into listing_style(id,listingId,style,version)   
+	    values (#{id},#{listingId},#{style},#{version})   
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from listing_style where listingId=#{listingId}
+	</delete>
+	
+	<!-- 根据歌单ID查找对应的风格列表 -->
+	<select id="list" parameterType="java.lang.String" resultMap="listingStyleResult">
+		select * from listing_style where listingId=#{id}		
+	</select>
+	
+	<!-- 根据歌单风格的值查找对应的风格数据字典 -->
+	<select id="selectStyleDic" parameterType="java.lang.String" resultMap="SysDic.sysDicResult">
+		select * from sysDic where value=#{type} and type='LISTING_STYLE_TYPE'
+	</select>
+</mapper>

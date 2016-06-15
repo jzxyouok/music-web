@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.1.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+         http://www.springframework.org/schema/tx 
+         http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" >
+	   <property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+		   <tx:method name="insert*" propagation="REQUIRED" rollback-for="exception"/>
+		   <tx:method name="update*" propagation="REQUIRED" rollback-for="exception"/>
+		   <tx:method name="del*" propagation="REQUIRED" rollback-for="exception"/>
+		   <tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice> -->
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+		   <tx:method name="insert*" propagation="REQUIRED" />
+		   <tx:method name="update*" propagation="REQUIRED" />
+		   <tx:method name="del*" propagation="REQUIRED" />
+		   <tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 配置事务切入点 -->
+	<aop:config>
+	   <aop:pointcut id="resourceManager" expression="execution(* com.johnf.app.music.*.service.impl.*.*(..))"/>
+	   <aop:advisor advice-ref="txAdvice" pointcut-ref="resourceManager"/>
+	</aop:config>
+
+</beans>

@@ -1,0 +1,217 @@
+@CHARSET "UTF-8";
+.content {
+	width: 900px;
+	min-height: 800px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin: 0 auto;
+}
+.f-fl {
+	float:left;
+}
+.f-ff2 {
+	float:right;
+}
+/* 头像 */
+.content .head {
+	margin-top: 20px;
+	position: relative;
+}
+.content .head span {
+	font-size: 30px;
+	font-weight: bolder;
+	position: absolute;
+	bottom: 20px;
+	left: 40px;
+	color: #fff;
+}
+.content .head .mask {
+	width: 640px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	heigth: 20px;
+    background: url("../../images/other/ban_mask.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+/* 简介 */
+.n-artdesc h3 i, .album_list .v-hd2 i {
+    background: none repeat scroll 0 0 #c10d0c;
+    height: 14px;
+    margin-right: 7px;
+    width: 1px;
+}
+div.n-artdesc p {
+	font-size: 13px;
+	color: #666;
+	line-height: 20px;
+	text-indent: 2em;
+}
+
+/* 专辑列表 标题 */
+.v-hd2 {
+    background-position: -240px -226px;
+    border-bottom: 2px solid #c10d0c;
+    height: 33px;
+    padding: 0;
+}
+.v-hd2 .tit {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #333;
+    text-decoration: none;
+}
+.v-hd2 .more {
+    float: right;
+    margin-top: 9px;       
+}
+.v-hd2 .more .cor, .v-hd3 .more .cor {
+    display: inline-block;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    width: 12px;
+}
+.v-hd2 .tab {
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.v-hd2 .tab .line {
+    color: #ccc;
+    margin: 0 10px;
+}
+.v-hd2 .btns {
+    float: right;
+    margin: 9px 17px 0 0;
+}
+.v-hd2 .btns a {
+    float: left;
+    height: 17px;
+    margin-left: 10px;
+    width: 17px;
+}
+
+a.s-fc3 {
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+}
+a.s-fc3:hover {
+    text-decoration: underline;
+}
+
+.s-bg, .v-hd2 {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+
+.s-bg-6 {
+    background-position: -2px -240px;
+}
+/* 添加专辑 */
+.u-btn {
+    background: url("../../images/other/button.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-btn-crt {
+    background-position: 0 -96px;
+    height: 22px;
+    width: 62px;
+    font-size: 13px;
+	color: #666;
+	font-weight: normal;
+	text-decoration: none;
+	margin-right: -30px;
+	padding-left: 20px;
+	padding-top: 3px;
+}
+.u-btn-crt:hover {
+    background-position: -94px -39px;
+    text-decoration: none;
+}
+.v-hd2 .hd {
+	width: 200px;
+	height: 30px;
+}
+
+/* 专辑列表 */
+ul.album_ul {			
+	padding-left: 0px;
+}
+ul.album_ul li {
+	display: inline;
+    float: left;
+    height: 230px;
+    padding:0;		   
+    overflow: hidden;
+    text-align: left;
+    width: 134px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+}
+ul.album_ul li a.c333 {
+	color:#333;
+	text-decoration: none;
+}
+ul.album_ul li a.c333:hover {
+	text-decoration: underline;
+}
+.mt0 {
+	margin-top:0px;
+}
+.mt10 {
+	margin-top:10px;
+}
+p.mt10 a {
+	font-size: 14px;
+}
+.u-cover img {
+	padding:2px;
+	border:1px solid #aaa;
+	cursor: pointer;
+}
+
+ul.album_ul p.mt0 a.delete, ul.album_ul p.mt0 a.edit {
+	width: 40px;
+	line-height:40px;
+	padding: 5px 10px;
+	border: 1px solid red;
+	font-size: 13px;
+	color: #fff;
+	background-color: #c10d0c;
+	border-radius: 3px;
+	margin-top: 6px;
+	text-align: center;
+}
+ul.album_ul p.mt0 a.delete:hover, ul.album_ul p.mt0 a.edit:hover {
+	background-color: #eb6120;
+	text-decoration: none;
+}
+
+/* 添加专辑弹出框 */
+.content table {
+	margin: 0px auto;
+}
+/*表格的每一行*/
+#add-album-alert table tr{
+	height: 50px;			
+}
+#add-album-alert form .submit{
+	cursor: pointer;
+	border:none;
+	border-radius:3px;
+	background-color: #eb6120;
+	color: white;
+	height: 28px;
+} 
+#add-album-alert .redBt {
+	text-decoration:none;
+	color:#fff;
+	height:30px;
+	padding: 6px 12px;
+	border-radius:3px;
+	background-color:#EB6120;
+}
+#add-album-alert .redBt:hover {
+	background-color:#FE7600;
+}

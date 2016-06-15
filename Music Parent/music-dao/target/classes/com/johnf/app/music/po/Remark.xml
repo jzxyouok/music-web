@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="Remark">
+	<resultMap type="remark" id="remarkResult">
+		<id property="id" column="id" />
+		<result property="type" column="type"/>
+		<result property="projectId" column="projectId"/>
+		<result property="userId" column="userId"/>
+		<result property="content" column="content"/>
+		<result property="time" column="time"/>
+		<result property="status" column="status"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+		
+		<!-- 用户信息 -->
+		<association property="userPo" column="userId" select="User.find"/>
+		<!-- 歌曲信息 -->
+		<association property="songPo" column="projectId" select="Song.find"/>
+		<!-- 专辑信息 -->
+		<association property="albumPo" column="projectId" select="Album.find"/>
+		<!-- 歌单信息 -->
+		<association property="songListingPo" column="projectId" select="SongListing.find"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="remark">   
+	    insert into remark(id,type,projectId,userId,content,time,status,isValid,version)   
+	    values (#{id},#{type},#{projectId},#{userId},#{content},#{time},#{status},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="remark">   
+	    update remark set status=#{status}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update remark set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="remarkResult" parameterType="java.lang.String">
+       <![CDATA[
+          select * from remark where isValid=1 and id=#{id}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="hashmap">
+          select count(*) from remark
+          <where>
+			isValid=1
+			<if test="status!=null and status!=''">
+			and status=#{status}	
+			</if>
+			<if test="rtype!=null and rtype!=''">
+			and type=#{rtype}	
+			</if>
+		  </where>
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="hashmap" resultMap="remarkResult">
+		select * from remark a
+		<!-- <choose>
+			<when test='rtype=="1"'>歌曲评论
+				a.id as remarkId, a.content, a.time, a.status, b.id as songId, b.name as songName,
+				c.id as userId, c.account 
+				from remark a 
+				left join song b on a.projectId=b.id
+				left join [user] c on a.userId=c.id
+			</when>
+			<when test='rtype=="2"'>专辑评论
+				a.id as remarkId, a.content, a.time, a.status, b.id as albumId, b.name as albumName,
+				c.id as userId, c.account 
+				from remark a 
+				left join album b on a.projectId=b.id
+				left join [user] c on a.userId=c.id
+			</when>
+			<when test='rtype=="3"'>歌单评论
+				a.id as remarkId, a.content, a.time, a.status, b.id as listingId, b.name as listingName,
+				c.id as userId, c.account 
+				from remark a 
+				left join song_listing b on a.projectId=b.id
+				left join [user] c on a.userId=c.id
+			</when>
+			<otherwise>
+				a.id as remarkId, a.content, a.time, a.status
+			</otherwise>
+		</choose> --> 		
+		<where>
+			a.isValid=1
+			<if test="status!=null and status!=''">
+			and status=#{status}	
+			</if>
+			<if test="rtype!=null and rtype!=''">
+			and type=#{rtype}	
+			</if>
+		</where>
+	</select>
+</mapper>

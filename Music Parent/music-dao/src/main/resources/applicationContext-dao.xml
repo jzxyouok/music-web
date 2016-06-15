@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.1.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+         http://www.springframework.org/schema/tx 
+         http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+    <!-- 导入数据源配置 -->
+    <import resource="applicationContext-common.xml"/>     
+        
+	<!-- 数据访问层部分 -->
+	<bean id="baseDao" class="com.johnf.app.music.dao.impl.BaseDaoImpl">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="accessoryDao" class="com.johnf.app.music.dao.impl.AccessoryDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="albumDao" class="com.johnf.app.music.dao.impl.AlbumDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="albumSingerDao" class="com.johnf.app.music.dao.impl.AlbumSingerDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="albumSongDao" class="com.johnf.app.music.dao.impl.AlbumSongDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="listingCollectionDao" class="com.johnf.app.music.dao.impl.ListingCollectionDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="listingLanguageDao" class="com.johnf.app.music.dao.impl.ListingLanguageDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="listingSongDao" class="com.johnf.app.music.dao.impl.ListingSongDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="listingStyleDao" class="com.johnf.app.music.dao.impl.ListingStyleDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="remarkDao" class="com.johnf.app.music.dao.impl.RemarkDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="singerDao" class="com.johnf.app.music.dao.impl.SingerDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="songDao" class="com.johnf.app.music.dao.impl.SongDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="songListingDao" class="com.johnf.app.music.dao.impl.SongListingDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="songSingerDao" class="com.johnf.app.music.dao.impl.SongSingerDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="sysDicDao" class="com.johnf.app.music.dao.impl.SysDicDaoImpl" parent="baseDao">		
+	</bean>
+	<bean id="userDao" class="com.johnf.app.music.dao.impl.UserDaoImpl" parent="baseDao">		
+	</bean>
+</beans>

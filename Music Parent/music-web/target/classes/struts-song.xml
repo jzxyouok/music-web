@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="song" namespace="/" extends="struts-base">
+		<!-- 歌曲管理action -->
+		<action name="song_*" class="songAction" method="{1}">
+			<result name="view">/front/song/view.jsp</result>
+			<result name="ranking">/front/song/ranking.jsp</result>
+			<result name="list">/front/song/list.jsp</result>
+		</action>		
+	</package>
+</struts>

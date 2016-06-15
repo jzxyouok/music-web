@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="AlbumSong">
+	<resultMap type="albumSong" id="albumSongResult">
+		<id property="id" column="id" />
+		<result property="albumId" column="albumId"/>
+		<result property="songId" column="songId"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="albumSong">   
+	    insert into album_song(id,albumId,songId,version)   
+	    values (#{id},#{albumId},#{songId},#{version})   
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.util.Map">
+		delete from album_song where albumId=#{albumId} and songId=#{songId}
+	</delete>
+</mapper>

@@ -1,0 +1,154 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:1000px;
+	min-height:1400px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-right:5px;	
+}
+.ui_left {
+	width:150px;
+	min-height:1370px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 30px;
+	float:left;
+	border: 1px solid #ccc;	
+}
+.ui_right {
+	width:726px;
+	min-height: 1320px;
+	float:right;
+	padding:40px;	
+	background-color:#ffffff;
+	border:1px solid #ccc;
+}
+
+/* 左侧导航栏 */
+.left_nav {
+	padding-left: 0;
+	border-bottom: 1px solid #ccc;	
+}
+ul.last {
+	border:none;
+}
+.left_nav li {
+	list-style-type: square;
+	list-style-position:inside;
+	font-size: 13px;
+	padding-left: 30px;
+	height:24px;	
+	padding-top: 5px;
+	margin-top: 10px;
+}
+.left_nav li a {
+	text-decoration: none;
+	color: #333;
+}
+.left_nav li a:hover {
+	text-decoration: underline;	
+}
+
+/* 热门歌手标题 */
+/* 推荐歌单部分 标题 */
+.v-hd2 {
+    background-position: -240px -226px;
+    border-bottom: 2px solid #c10d0c;
+    height: 33px;
+    padding: 0;
+}
+.v-hd2 .tit {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #333;
+    text-decoration: none;
+}
+.v-hd2 .more {
+    float: right;
+    margin-top: 9px;       
+}
+.v-hd2 .more .cor, .v-hd3 .more .cor {
+    display: inline-block;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    width: 12px;
+}
+.v-hd2 .tab {
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.v-hd2 .tab .line {
+    color: #ccc;
+    margin: 0 10px;
+}
+.v-hd2 .btns {
+    float: right;
+    margin: 9px 17px 0 0;
+}
+.v-hd2 .btns a {
+    float: left;
+    height: 17px;
+    margin-left: 10px;
+    width: 17px;
+}
+a.s-fc3 {
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+a.s-fc3:hover {
+    text-decoration: underline;
+}
+/* 热门歌手列表 */
+.m-cvrlst {
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #ccc;
+}
+.m-cvrlst li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 7px;
+	margin-top: 20px;
+}
+.m-cvrlst p {
+	font-size: 13px;
+	margin-top: 4px;
+}
+.m-cvrlst p a {
+	text-decoration: none;
+	color: #333;
+}
+.m-cvrlst p a:hover {
+	text-decoration: underline;
+}
+/* 其他歌手列表 */
+.others {
+	padding-left: 0;
+	padding-top: 0;
+	margin-top: -20px;
+}
+.others li {
+	list-style: none;
+	display: inline-block;
+	width: 70px;	
+	margin-right: 60px;
+	margin-top: 20px;
+	font-size:13px;
+}
+.others li a {
+	text-decoration: none;
+	color: #333;
+}
+.others li a:hover {
+	text-decoration: underline;
+}

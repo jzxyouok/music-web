@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysSong" namespace="/sys" extends="struts-base">
+		<!-- 后台歌曲管理action -->
+		<action name="sysSong_*" class="sysSongAction" method="{1}">
+			<result name="input" type="redirect">/system/login.jsp</result>
+			<result name="list">/system/song/list.jsp</result>
+			<result name="add">/system/song/add.jsp</result>
+			<result name="update">/system/song/update.jsp</result>
+			<result name="view">/system/song/view.jsp</result>
+		</action>
+		
+		<!-- 添加歌曲Action -->
+		<action name="addSong" class="sysSongAction" method="add">            
+            <result name="success" type="chain">sysSong_list</result>
+        </action>
+        
+        <!-- 更新歌曲Action -->
+		<action name="updateSong" class="sysSongAction" method="update">            
+            <result name="success" type="chain">sysSong_list</result>
+        </action>
+	</package>
+</struts>

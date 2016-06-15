@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="singer" namespace="/" extends="struts-base">
+		<!-- 歌手管理action -->
+		<action name="singer_*" class="singerAction" method="{1}">
+			<result name="list">/front/singer/list.jsp</result>
+			<result name="listForSearch">/front/singer/listForSearch.jsp</result>
+			<result name="view">/front/singer/view.jsp</result>
+			<result name="songList">/front/singer/songList.jsp</result>
+			<result name="albumList">/front/singer/albumList.jsp</result>
+			<result name="intro">/front/singer/intro.jsp</result>
+		</action>		
+	</package>
+</struts>

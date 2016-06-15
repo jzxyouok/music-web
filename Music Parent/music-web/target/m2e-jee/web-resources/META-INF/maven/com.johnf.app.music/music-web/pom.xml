@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.johnf.app.music</groupId>
+    <artifactId>music-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>music-web</artifactId>
+  <packaging>war</packaging>
+  <name>Music Web</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+    <!-- spring相关包 -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-core</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-beans</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  	</dependency>
+  	<!-- Struts2 -->
+	<dependency>
+        <groupId>org.apache.struts</groupId>  
+        <artifactId>struts2-core</artifactId>  
+    </dependency>
+    <!-- Struts2和Spring整合插件 -->
+    <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-spring-plugin</artifactId>
+        <version>2.3.4.1</version>
+    </dependency>
+    <!-- music-service依赖 -->
+  	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>music-service</artifactId>
+		<version>${project.version}</version>
+	</dependency>
+	<!-- servlet -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>  
+        <groupId>jstl</groupId>  
+        <artifactId>jstl</artifactId>  
+        <version>1.2</version>  
+    </dependency>
+    <dependency>
+        <groupId>taglibs</groupId>
+        <artifactId>standard</artifactId>  
+        <version>1.1.2</version>  
+    </dependency>
+    <!-- log4j -->
+    <dependency>
+	  <groupId>log4j</groupId>
+	  <artifactId>log4j</artifactId>
+	  <version>1.2.9</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>music-web</finalName>
+  </build>
+</project>

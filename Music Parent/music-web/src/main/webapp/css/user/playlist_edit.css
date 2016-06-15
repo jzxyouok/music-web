@@ -1,0 +1,238 @@
+@CHARSET "UTF-8";
+body {width: 620px; padding-left: 40px;}
+.content .title {font-size: 14px;}
+.content a {text-decoration: none;}
+.content a:hover {text-decoration: underline;}
+.f-fl {float:left;}		
+.f-ff2 {float: right; }
+.left {width:75%;}
+.right {width:25%;}
+.formDiv {width:600px; height: 400px; margin-top:40px; font-size: 14px;}
+.formDiv input[type='text'], .formDiv textarea {
+	width: 200px;
+	vertical-align: top;
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+.formDiv textarea {font-size: 13px;}
+.formDiv input[type='text'] {
+	height: 25px;
+}
+.formDiv input[type='submit'], .formDiv input[type='reset'] {
+	border:none;
+	padding: 6px 20px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.auto-1429423418132 {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #aaa;
+    position: absolute;
+    z-index: 1000;		    
+    width: 570px;
+}
+
+div.m-layer .zbar {
+    background: none repeat scroll 0 0 #2d2d2d;
+    border-bottom: 1px solid #191919;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    padding: 6px 20px;
+}
+div.m-layer .zbar, div.m-layer .zttl {
+    -moz-user-select: none;
+    cursor: move;
+}
+.auto-1429423418132 .zcnt {
+    padding: 10px 15px;	 
+    height:500px;   
+}
+.auto-1429423418132 .zttl {
+    margin-right: 20px;
+    text-align: left;	    
+}
+.auto-1429423418132 .zcls {
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 20px;
+    color:#fff;
+    z-index:220;
+}
+	
+.auto-1429423418133 {
+    background: none repeat scroll 0 0 #fff;
+    position: absolute;
+}
+.auto-1429423418134 {
+    font-size: 12px;
+    line-height: 160%;
+}
+.auto-1429423418134 a {
+    border: 1px solid #aaa;
+    color: #333;
+    margin: 0 2px;
+    padding: 2px 8px;
+    text-decoration: none;
+}
+.auto-1429423418134 .js-disabled {
+    cursor: default;
+}
+.auto-1429423418134 .js-selected {
+    background: none repeat scroll 0 0 #bbb;
+    cursor: default;
+}
+.j-item.j-selected a {
+    background: none repeat scroll 0 0 #eee;
+    color: #333;
+    text-decoration: none;
+}
+.u-atlist {
+    position: absolute;
+    z-index: 10000;
+}
+.f-thide.selected-item {
+    background-color: #eee;
+}
+.m-seltags .taglst {
+    float: right;
+    width: 100%;
+    min-height: 90px;
+}
+.m-seltags ul {
+    margin: -10px 0 0 30px;
+    padding: 0;
+    font-size: 13px;
+}
+.m-seltags li {
+    display: inline;
+    float: left;
+    height: 31px;
+    margin: 10px 0 0 15px;	    
+    position: relative;
+    width: 80px;
+    text-align: center;
+  	background-color: #F1F1F1; 
+  	text-decoration: none;
+  	border-radius:4px;
+  	border:1px solid #ccc;
+  	cursor: pointer;
+  }	 
+  .m-seltags li:hover {
+ 	background-color: #FAFAFA;	 	
+ }	 
+ .m-seltags li a {		
+ 	text-decoration: none;
+ 	color: #666;
+ 	position: relative;
+ 	top:7px;
+ }
+ .m-seltags li a:hover {
+ 	text-decoration: none;
+ }
+ .u-btn2-2 {
+  background-color: #4D96DA;
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+/* 标签  */
+ .u-tag, .u-tag i {
+   	background: url("../../images/other/button2.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-tag, .u-tag i {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+}
+.u-tag, .u-tag:hover {
+    color: #777;
+    text-decoration: none;
+}
+.u-tag {
+    background-position: right -27px;
+    padding: 0 10px 0 0;
+    text-shadow: 0 1px #fdfdfd;
+    font-size: 13px;
+}
+.u-tag i {
+    background-position: 0 0;
+    padding: 0 3px 0 13px;
+    position: relative;
+    font-style: normal;
+}
+.u-tag:hover {
+    background-position: right -1430px;
+}
+.u-tag:hover i {
+    background-position: 0 -1400px;
+}
+.u-tag-1 {
+	margin-right: 6px;
+}
+.u-tag-1 i {
+    padding-right: 10px;       
+}
+.u-tag em {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 2px;
+    position: absolute;
+    right: -4px;
+    top: -1px;
+}
+.u-tag-2 {
+    background-position: right -2020px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 8px 0 0;
+}
+.u-tag-2 i {
+    background-position: 0 -1988px;
+    height: 20px;
+    line-height: 20px;
+}
+.u-tag-2:hover {
+    background-position: right -2088px;
+}
+.u-tag-2:hover i {
+    background-position: 0 -2055px;
+}
+/* 选中标签 */
+.m-seltags li.z-sel .u-icn-31 {
+    display: inline;
+}
+.u-icn, .u-title-1 .out .icon {
+    background: url("../../images/other/icon.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-icn, .u-icn2, .u-icn3 {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.u-icn-31 {
+    bottom: -3px;
+    display: none;
+    position: absolute;
+    right: -3px;
+}
+.u-icn-31 {
+    background-position: -25px -430px;
+}
+.u-icn-31, .u-icn-32 {
+    height: 18px;
+    width: 18px;
+}
+em, i {
+    font-size: inherit;
+    font-style: normal;
+    text-align: left;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="songListing" namespace="/" extends="struts-base">
+		<!-- 歌曲管理action -->
+		<action name="songListing_*" class="songListingAction" method="{1}">
+			<result name="list">/front/songListing/list.jsp</result>
+			<result name="listForSearch">/front/songListing/listForSearch.jsp</result>
+			<result name="view">/front/songListing/view.jsp</result>
+			<result name="update">/front/songListing/update.jsp</result>
+			<result name="viewForUser">/front/songListing/viewForUser.jsp</result>
+			<result name="editSuccess" type="chain">songListing_viewForUser</result>
+			<result name="toSearch">/front/search.jsp</result>
+		</action>		
+	</package>
+</struts>

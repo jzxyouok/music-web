@@ -1,0 +1,254 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+.ui_layout {
+	width:1000px;
+	min-height:900px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-right:5px;
+	background-color: #FFFFFF;
+	border: 1px solid #ccc;
+}
+.ui_left {
+	width:655px;
+	min-height:870px;
+	padding-left: 30px;
+	padding-right: 50px;
+	float:left;
+	position: relative;
+	border-right: 1px solid #ccc;
+}
+.ui_right {
+	width:240px;
+	min-height: 1000px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* 歌单详情 */
+.list_info {
+	width:650px;
+	height:220px;
+}
+.detail {	
+	width:460px;
+	margin-left: 30px;
+	position: absolute;
+	top:0;
+	right:0;
+}
+.detail .title {
+	height:30px;
+}
+.detail .title .tit {
+	position: relative;
+	top:-13px;
+	left:20px;
+	font-size: 14px;
+	font-weight: normal;	
+}
+/* 歌单图片 */
+.u-icn{
+    background: url("../../images/other/icon.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-icn-13 {
+    background-position: 0 -243px;
+    height: 24px;
+    width: 54px;
+}
+.f-fl {
+	float:left;
+}
+.f-ff2 {
+	float:right;
+}
+/* 用户 */
+.user {
+	margin-top: 6px;
+}
+.user a {
+	text-decoration: none;
+}
+.user .face, .user .name, .user .time {
+	position: relative;
+	left:-147px;
+}
+.user .face img {
+	border-radius:20px;
+}
+.user .name, .user .time {
+	top:-10px;
+	font-size: 13px;	
+}
+.user .time {
+	max-width:220px;	
+	color:#666;
+}
+.user .name a:hover {
+	text-decoration: underline;
+}
+/* 标签 */
+.tags {
+	font-size: 13px;
+	color:#666;
+	margin-top: 20px;
+}
+.tags .u-tag {
+	text-decoration: none;
+	color:#666;
+	padding: 5px 15px;
+	border:1px solid #999;
+	background-color: #ccc;
+	border-radius:10px;
+}
+.tags .u-tag:hover {
+	background-color: #fff;
+}
+.tags .u-tag i {
+	font-style: normal;
+}
+/* 介绍 */
+.detail .intr {
+	font-size: 13px;
+	color:#666;
+	line-height: 20px;
+	margin-top: 15px;	
+}
+.detail .title i {
+	display: inline-block;
+	width: 60px;
+}
+/* 按钮 */
+.btns {
+	margin-top: 10px;
+}
+
+/* 歌曲列表 */
+.song_list {
+	width: 700px;
+	margin-top:25px;
+}
+.song_list .u-title .hd {
+	font-size:22px;
+	font-weight: bold;
+}
+.song_list .sub {
+	margin-left: 10px;
+	margin-top: 4px;
+	font-size: 13px;
+}
+.song_list .u-title {
+	height: 30px;
+	border-bottom: 2px solid #C20C0C;
+}
+.m-table {
+	width: 700px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.m-table td, .m-table th {
+	min-width: 70px;
+}
+.m-table tr {
+	height:30px;
+}
+.m-table th {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;	
+}
+#m-song-list-module td {
+	padding-left: 5px;
+	font-size: 14px;
+	color:#333;
+}
+#m-song-list-module td.first_td {
+	width:70px;
+}
+#m-song-list-module td.second_td {
+	width:250px;
+}
+#m-song-list-module td.third_td {
+	width:70px;
+}
+#m-song-list-module td.fourth_td {
+	width:120px;
+}
+#m-song-list-module td.fifth_td {
+	width:120px;
+}
+#m-song-list-module a {
+	text-decoration: none;
+	color:#333;
+}
+#m-song-list-module a:hover {
+	text-decoration: underline;
+}
+.m-table .ply {
+    background-position: 0 -204px;
+    height: 36px;
+    margin-top: 0;
+    width: 36px;
+}
+.m-table .ply:hover {
+    background-position: -40px -204px;
+}
+.s-bg {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.s-bg-11 {
+    background-position: -267px -268px;
+}
+.s-bg-11:hover {
+    background-position: -267px -288px;
+}
+.s-bg-12 {
+    background-position: -297px -268px;
+}
+.s-bg-12:hover {
+    background-position: -297px -288px;
+}
+.u-icn-81 {
+    background-position: 0 -700px;
+    height: 13px;
+    width: 13px;
+}
+.f-cb .opt {
+	float: right;
+	margin-top: -15px;
+}
+.f-cb .opt span {
+	width:20px;
+	display: inline-block;
+	cursor: pointer;
+}
+.ztag .left .playBtn {
+	width:20px;
+	display: inline-block;
+	margin-left: 25px;
+	cursor: pointer;
+}
+
+/* 喜欢该歌单的人 */
+.ui_right .u-hd .title {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
+.ui_right .u-hd .m-piclist {
+	padding-left: 0;
+}
+.ui_right .u-hd .m-piclist li {
+	list-style: none;
+	width:60px;
+	display: inline;
+}
+
+.u-icn-11 {
+    background-position: 0 -284px;
+    height: 14px;
+    width: 13px;
+}
+.u-icn-11:hover {
+    background-position: -20px -284px;
+}

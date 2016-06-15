@@ -1,0 +1,11 @@
+com\johnf\app\music\form\SongForm.class
+com\johnf\app\music\util\StringTools.class
+com\johnf\app\music\web\SysUserAction.class
+com\johnf\app\music\form\AlbumForm.class
+com\johnf\app\music\util\CheckLogin.class
+com\johnf\app\music\form\RemarkForm.class
+com\johnf\app\music\form\SongListingForm.class
+com\johnf\app\music\util\MD5.class
+com\johnf\app\music\web\BaseAction.class
+com\johnf\app\music\form\UserForm.class
+com\johnf\app\music\form\SingerForm.class

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="Album">
+	<resultMap type="album" id="albumResult">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<result property="company" column="company"/>
+		<result property="image" column="image"/>
+		<result property="publishDate" column="publishDate"/>
+		<result property="area" column="area"/>
+		<result property="description" column="description"/>
+		<result property="playCount" column="playCount"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="album">   
+	    insert into album(id,name,company,image,publishDate,area,description,playCount,isValid,version)   
+	    values (#{id},#{name},#{company},#{image},#{publishDate},#{area},#{description},#{playCount},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="album">   
+	    update album set name=#{name},company=#{company},image=#{image},publishDate=#{publishDate},area=#{area},
+	    	description=#{description},playCount=#{playCount},isValid=#{isValid},version=#{version}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update album set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="albumResult" parameterType="java.lang.String">
+       <![CDATA[
+          select a.*,
+			(select b.id + ',' + b.name+' ' from singer b left join album_singer c on b.id=c.singerId 
+				where c.albumId=a.id for XML path('')) as singerInfo
+			from album a where a.id=#{_parameter}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="java.lang.String">
+       <![CDATA[
+          select count(*) from album ${_parameter}
+       ]]>
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="hashmap" resultMap="albumResult">
+		select a.*,
+			(select b.id + ',' + b.name+' ' from singer b left join album_singer c on b.id=c.singerId 
+				where c.albumId=a.id for XML path('')) as singerInfo
+		from album a 
+		<where>
+			<if test="name!=null and name!=''">
+			and name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+			<if test="area!=null and area!=''">
+			and a.area = #{area}	
+			</if>
+		</where>
+		<if test="orderby!=null and orderby!=''">
+			${orderby}
+		</if>
+		<if test="orderby==null or orderby==''">
+			order by publishDate desc
+		</if>
+	</select>
+	
+	<!-- 根据条件查找对应的列表 -->
+	<select id="listByFilter" parameterType="java.lang.String" resultMap="albumResult">
+		select a.*,
+			(select b.id + ',' + b.name+' ' from singer b left join album_singer c on b.id=c.singerId 
+				where c.albumId=a.id for XML path('')) as singerInfo
+		from album a ${_parameter}		
+	</select>
+</mapper>

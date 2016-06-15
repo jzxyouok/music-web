@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- action-->
+	<!-- base action -->
+	<bean id="baseAction" class="com.johnf.app.music.web.common.BaseAction" scope="prototype">
+	</bean>
+	<bean id="validateCodeAction" class="com.johnf.app.music.web.common.ValidateCodeAction" scope="prototype">
+	</bean>
+	<bean id="uploadifyAction" class="com.johnf.app.music.web.common.UploadifyAction" scope="prototype">
+	</bean>
+	
+	<!-- system -->
+	<!-- 系统用户index -->
+	<bean id="sysUserAction" class="com.johnf.app.music.web.system.SysUserAction" scope="prototype" parent="baseAction">
+		<property name="userService" ref="userService" />
+	</bean>
+	<!-- 后台评论管理 -->
+	<bean id="sysRemarkAction" class="com.johnf.app.music.web.system.SysRemarkAction" scope="prototype" parent="baseAction">
+		<property name="remarkService" ref="remarkService" />
+	</bean>
+	<!-- 后台歌手管理 -->
+	<bean id="sysSingerAction" class="com.johnf.app.music.web.system.SysSingerAction" scope="prototype" parent="baseAction">
+		<property name="singerService" ref="singerService" />
+		<property name="sysDicService" ref="sysDicService" />
+		<property name="albumService" ref="albumService" />
+	</bean>
+	<!-- 后台专辑管理 -->
+	<bean id="sysAlbumAction" class="com.johnf.app.music.web.system.SysAlbumAction" scope="prototype" parent="baseAction">
+		<property name="sysDicService" ref="sysDicService" />
+		<property name="albumService" ref="albumService" />
+		<property name="songService" ref="songService" />
+	</bean>
+	<!-- 后台歌单管理 -->
+	<bean id="sysSongListingAction" class="com.johnf.app.music.web.system.SysSongListingAction" scope="prototype" parent="baseAction">
+		<property name="songListingService" ref="songListingService" />
+	</bean>
+	<!-- 后台歌曲管理 -->
+	<bean id="sysSongAction" class="com.johnf.app.music.web.system.SysSongAction" scope="prototype" parent="baseAction">
+		<property name="songService" ref="songService" />
+	</bean>
+	<!-- 后台数据字典管理 -->
+	<bean id="sysDicAction" class="com.johnf.app.music.web.system.SysDicAction" scope="prototype" parent="baseAction">
+		<property name="sysDicService" ref="sysDicService" />
+	</bean>
+	
+	<!-- 前台 -->
+	<!-- 前台首页action -->
+	<bean id="indexAction" class="com.johnf.app.music.web.app.IndexAction" scope="prototype" parent="baseAction">
+		<property name="singerService" ref="singerService" />
+		<property name="songListingService" ref="songListingService" />
+		<property name="songService" ref="songService" />
+		<property name="albumService" ref="albumService" />
+	</bean>
+	<!-- 前台专辑相关action -->
+	<bean id="albumAction" class="com.johnf.app.music.web.app.AlbumAction" scope="prototype" parent="baseAction">
+		<property name="albumService" ref="albumService" />
+		<property name="songService" ref="songService" />
+		<property name="remarkService" ref="remarkService"/>
+	</bean>
+	<!-- 前台歌手相关action -->
+	<bean id="singerAction" class="com.johnf.app.music.web.app.SingerAction" scope="prototype" parent="baseAction">
+		<property name="singerService" ref="singerService"/>
+		<property name="songService" ref="songService"/>
+		<property name="albumService" ref="albumService"/>
+		<property name="sysDicService" ref="sysDicService"/>
+	</bean>
+	<!-- 前台歌曲相关action -->
+	<bean id="songAction" class="com.johnf.app.music.web.app.SongAction" scope="prototype" parent="baseAction">
+		<property name="songService" ref="songService"/>
+		<property name="userService" ref="userService"/>
+		<property name="remarkService" ref="remarkService"/>
+	</bean>
+	<!-- 前台歌单相关action -->
+	<bean id="songListingAction" class="com.johnf.app.music.web.app.SongListingAction" scope="prototype" parent="baseAction">
+		<property name="songListingService" ref="songListingService"/>
+		<property name="sysDicService" ref="sysDicService"/>
+		<property name="remarkService" ref="remarkService"/>
+		<property name="songService" ref="songService"/>
+		<property name="userService" ref="userService"/>
+		<property name="listingSongService" ref="listingSongService"/>
+		<property name="listingCollectionService" ref="listingCollectionService"/>
+	</bean>
+	<!-- 前台用户相关action -->
+	<bean id="userAction" class="com.johnf.app.music.web.app.UserAction" scope="prototype" parent="baseAction">
+		<property name="userService" ref="userService"/>
+		<property name="songListingService" ref="songListingService"/>
+	</bean>
+	<!-- 前台评论相关action -->
+	<bean id="remarkAction" class="com.johnf.app.music.web.app.RemarkAction" scope="prototype" parent="baseAction">
+		<property name="remarkService" ref="remarkService"/>
+	</bean>
+</beans>

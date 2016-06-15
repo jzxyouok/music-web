@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="Accessory">
+	<resultMap type="accessory" id="accessoryResult">
+		<id property="id" column="id" />
+		<result property="projectId" column="projectId"/>
+		<result property="type" column="type"/>
+		<result property="size" column="size"/>
+		<result property="url" column="url"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="accessory">   
+	    insert into accessory(id,projectId,type,size,url,isValid,version)   
+	    values (#{id},#{projectId},#{type},#{size},#{url},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.util.Map">
+		delete from accessory where projectId=#{projectId} and type=#{type}
+	</delete>
+	
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="java.lang.String" resultMap="accessoryResult">
+		select * from accessory #{filter}
+	</select>
+</mapper>

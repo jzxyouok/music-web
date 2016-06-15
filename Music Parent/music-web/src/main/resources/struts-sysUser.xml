@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysUser" namespace="/sys" extends="struts-base">
+		<!-- 系统用户action -->
+		<action name="sysUser_*" class="sysUserAction" method="{1}">
+			<result>/common/pub_ok.jsp</result>
+			<result name="input" type="redirect">/system/login.jsp</result>
+			<result name="main">/system/main.jsp</result>
+			<result name="logout" type="redirect">/system/login.jsp</result>
+			<result name="list">/system/user/list.jsp</result>
+		</action>
+		
+		<!-- 验证码action -->
+		<action name="code" class="validateCodeAction">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

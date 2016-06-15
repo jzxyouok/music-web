@@ -1,0 +1,227 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:920px;
+	min-height:1200px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-right:5px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #FFFFFF;
+}
+.f-fl {
+	float:left;
+}
+.f-ff2 {
+	float:right;
+}
+
+/* 简介 */
+.m-proifo {
+	height: 220px;
+}
+.m-proifo dt img {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d5d5d5;
+    display: block;
+    height: 180px;
+    padding: 3px;
+    width: 180px;
+}
+.m-proifo dt .btm, .m-proifo dt .upload {
+    bottom: 3px;
+    color: #fff;
+    display: block;
+    height: 26px;
+    left: 4px;
+    line-height: 26px;
+    position: absolute;
+    text-align: center;
+    width: 180px;
+}
+.m-proifo dt .upload {
+    left: 0;
+    top: 0;
+}
+.m-proifo dt .btm {
+    background: none repeat scroll 0 0 #8e8e8e;
+    display: none;
+    opacity: 0.8;
+}
+.m-proifo dt:hover .btm, .m-proifo dt.z-hvr .btm {
+    display: block;
+}
+.m-proifo dd {
+    float: left;
+    width: 670px;
+}
+.m-proifo .name {    
+    width: 100%;
+}
+.m-proifo .name h2 {
+    padding-bottom: 3px;
+}
+.m-proifo .name .tit {
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 3px;
+}
+.m-proifo .inf {
+    line-height: 24px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #666;
+}
+
+/* 推荐歌单部分 */
+.song_listing {
+	width:900px;
+	min-height:440px;	
+}
+
+/* 推荐歌单部分 标题 */
+.v-hd2 {
+    background-position: -240px -226px;
+    border-bottom: 2px solid #c10d0c;
+    height: 33px;
+    padding: 0;
+}
+.v-hd2 .tit {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #333;
+    text-decoration: none;
+}
+.v-hd2 .more {
+    float: right;
+    margin-top: 9px;       
+}
+.v-hd2 .more .cor, .v-hd3 .more .cor {
+    display: inline-block;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    width: 12px;
+}
+.v-hd2 .tab {
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.v-hd2 .tab .line {
+    color: #ccc;
+    margin: 0 10px;
+}
+.v-hd2 .btns {
+    float: right;
+    margin: 9px 17px 0 0;
+}
+.v-hd2 .btns a {
+    float: left;
+    height: 17px;
+    margin-left: 10px;
+    width: 17px;
+}
+
+a.s-fc3 {
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+}
+a.s-fc3:hover {
+    text-decoration: underline;
+}
+
+.s-bg, .v-hd2 {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+
+.s-bg-6 {
+    background-position: -2px -240px;
+}
+
+/* 推荐歌单具体内容部分 */
+/* 耽搁歌单总体样式 */
+.m-cvrlst {
+	margin: 0;
+	padding: 15px 0 0 0;
+	width:900px;
+}
+.m-cvrlst li {
+	list-style:none;
+	margin-left: 30px;	
+	display: inline-block;
+	position: relative;
+	left:-28px;	
+}
+.m-cvrlst li p.dec a {
+	height: 25px;
+	line-height: 25px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.u-cover .bottom, .u-cover .msk {
+    background: url("../../images/other/coverall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.u-cover .ply, .u-cover .icon-headset, .u-cover .icon-play {
+    background: url("../../images/other/iconall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.u-cover-1 {
+    height: 140px;
+    width: 140px;
+    position: relative;
+}
+.u-cover .icon-headset {
+    background-position: 0 -24px;
+    float: left;
+    height: 11px;
+    margin: 9px 5px 9px 10px;
+    width: 14px;
+}
+.u-cover .icon-play {
+    background-position: 0 0;
+    bottom: 5px;
+    height: 17px;
+    position: absolute;
+    right: 10px;
+    width: 16px;
+}
+.u-cover .bottom {
+    background-position: 0 -537px;
+    bottom: 0;
+    color: #ccc;
+    height: 27px;
+    left: 0;    
+    position: absolute;
+    width: 100%;
+    font-size:13px;
+}
+/* 歌单收听数 */
+.u-cover .bottom .nb {
+	position: relative;
+	top:6px;
+}
+/* 歌单名样式 */
+.m-cvrlst li .dec {
+	max-width: 140px;
+	max-height: 60px;
+	margin-top: 3px;
+}
+.m-cvrlst li .dec a {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.m-cvrlst li .dec a:hover {
+	text-decoration: underline;
+}

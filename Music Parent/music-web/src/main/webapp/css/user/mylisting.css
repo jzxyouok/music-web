@@ -1,0 +1,163 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:1000px;
+	min-height:700px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-right:5px;
+	background-color: #FFFFFF;
+	border:1px solid #ccc;
+}
+.ui_left {
+	width:200px;
+	margin-top: -20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	float:left;
+	position: fixed;
+	background-color: #f9f9f9;	
+}
+.ui_right {
+	width:728px;
+	min-height:600px;
+	float:right;
+	padding:5px;
+	background-color:#ffffff;	
+	border-left:1px solid #ccc;
+}
+.f-fl {
+	float:left;
+}
+.f-ff2 {
+	float:right;
+}
+
+/* 左侧歌单列表 */
+.detail_list {
+	padding-left: 0;
+	font-size: 13px;	
+}
+
+/* 头部 */
+.u-icn, .u-title-1 .out .icon {
+    background: url("../../images/other/icon.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-icn-10 {
+    background-position: 0 -270px;
+    height: 13px;
+    width: 13px;
+}
+.u-icn-10:hover {
+    background-position: -20px -270px;
+}
+.u-icn-11 {
+    background-position: 0 -284px;
+    height: 14px;
+    width: 13px;
+}
+.u-icn-11:hover {
+    background-position: -20px -284px;
+}
+.n-minelst .tri {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    margin: 0 2px 0 5px;
+    vertical-align: middle;
+}
+.n-minelst h4 {
+	cursor: pointer;
+}
+.n-minelst h4 a {
+	font-size: 13px;
+	color: #666;
+	font-weight: normal;
+	text-decoration: none;
+	margin-right: -30px;
+	padding-left: 20px;
+	padding-top: 3px;
+}
+.n-minelst h4 span.rtitle {
+	font-size: 14px;
+}
+.n-minelst .tri1 {
+    border-color: #ccc transparent transparent;
+    border-style: solid dashed dashed;
+    border-width: 8px 7px 0;
+}
+.n-minelst-hide .tri1 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent transparent #ccc;
+    border-image: none;
+    border-style: dashed dashed dashed solid;
+    border-width: 8px;
+    margin-right: 0;
+}
+.u-btn {
+    background: url("../../images/other/button.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-btn-crt {
+    background-position: 0 -96px;
+    height: 22px;
+    width: 52px;
+}
+.u-btn-crt i {
+    color: #515151;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 22px;
+    overflow: hidden;
+    padding-left: 20px;
+}
+.u-btn-crt:hover {
+    background-position: -94px -39px;
+    text-decoration: none;
+}
+/* 歌单项 */
+.detail_list li {
+	list-style: none;	
+	padding: 6px 0;
+	cursor: pointer;
+	height: 42px;
+	position: relative;
+}
+.detail_list li.selected {
+	background-color: #e6e6e6;			
+}
+.detail_list a {
+	text-decoration: none;
+	color: #333;
+}
+.detail_list li .left {
+	width: 40px;
+}
+.detail_list li .right {
+	height: 40px;
+}
+.detail_list li .right .name, .detail_list li .right .num {
+	margin-top: 0px;
+	margin-left: 10px;
+	display: block;
+}
+.detail_list li .right .num {
+	color: #999;
+}
+.detail_list li .oper {
+    bottom: 7px;
+    position: absolute;
+    right: 0;
+}
+.detail_list li .oper a {
+	display: inline-block;
+}

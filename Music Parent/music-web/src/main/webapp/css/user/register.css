@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F1F1F1;
+}
+.formDiv {
+	width:990px; 
+	min-height:453px;
+	margin:0 auto; 
+	background-color:#FFFFFF;	
+}
+.formDiv table {
+	width:700px; 
+	margin:0 auto;
+	height:360px;
+	padding-top:50px;
+	padding-left: 200px;
+}
+.formDiv .STYLE2 {
+	font-size: 16px;
+}
+.formDiv .STYLE3 {
+	color: #FF6600
+}
+.formDiv td {
+	vertical-align:top;
+	min-height:63px;	
+}
+.formDiv td span.STYLE2 {
+	margin-left:30px;
+}
+.formDiv p.errorInfo {
+	font-size:13px; color:#c03b0c; margin-top:7px; margin-left:10px; width:250px; float:left;
+}
+
+.formDiv input[type='button'] {
+	width:120px;
+	height:52px; 
+	cursor:pointer; 
+	border:0px;
+	background-color:#EB6120;
+	padding:5px 30px;
+	color:#fff;
+	font-size:24px;
+	border-radius:5px;
+	margin-left:30px;
+}
+.formDiv input[type='button']:hover {
+	background-color:#FE7600;
+}
+
+.formDiv input[type='submit']:hover {
+	background-color:#FE7600;
+}
+.formDiv .button{
+	width:120px; height:52px; cursor:pointer; border:0px;
+	background-color:#EB6120;
+	padding:5px 30px;
+	color:#fff;
+	font-size:24px;
+	border-radius:5px;
+	margin-left:30px;
+}
+.formDiv input[name='account'],.formDiv input[type='password'] {
+	height:24px; width:230px;
+} 
+.formDiv input[type='text'] {
+	font-size: 16px;
+	padding-left:10px;
+	float:left;
+}
+.formDiv input[type='password'] {
+	font-size: 14px;
+	padding-left:10px;
+	float:left;
+}
+.formDiv input[name='validateCode'] {
+	width:79px;height:25px;
+}
+.formDiv #image2 {
+	width:65px; height:23px; cursor:pointer; position:relative; top:3px; left: 10px;
+}

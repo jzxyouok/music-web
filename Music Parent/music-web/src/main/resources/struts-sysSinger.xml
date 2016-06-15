@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysSinger" namespace="/sys" extends="struts-base">
+		<!-- 后台歌手管理action -->
+		<action name="sysSinger_*" class="sysSingerAction" method="{1}">
+			<result name="input" type="redirect">/system/login.jsp</result>
+			<result name="list">/system/singer/list.jsp</result>
+			<result name="add">/system/singer/add.jsp</result>
+			<result name="update">/system/singer/update.jsp</result>
+			<result name="view">/system/singer/view.jsp</result>
+			<result name="listToSelect">/system/singer/listToSelect.jsp</result>
+		</action>
+		
+		<!-- 添加歌手Action -->
+		<action name="addSinger" class="sysSingerAction" method="add">            
+            <result name="success" type="chain">sysSinger_list</result>
+        </action>
+        
+        <!-- 更新歌手Action -->
+		<action name="updateSinger" class="sysSingerAction" method="update">            
+            <result name="success" type="chain">sysSinger_list</result>
+        </action>
+	</package>
+</struts>

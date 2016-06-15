@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="ListingSong">
+	<resultMap type="listingSong" id="listingSongResult">
+		<id property="id" column="id" />
+		<result property="listingId" column="listingId"/>
+		<result property="songId" column="songId"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="listingSong">   
+	    insert into listing_song(id,listingId,songId,version)   
+	    values (#{id},#{listingId},#{songId},#{version})   
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.util.Map">
+		delete from listing_song where listingId=#{listingId} and songId=#{songId}
+	</delete>
+</mapper>

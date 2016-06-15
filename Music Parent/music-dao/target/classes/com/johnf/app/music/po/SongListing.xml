@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="SongListing">
+	<resultMap type="songListing" id="songListingResult">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<result property="image" column="image"/>
+		<result property="userId" column="userId"/>
+		<result property="createDate" column="createDate"/>
+		<result property="description" column="description"/>
+		<result property="playCount" column="playCount"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+		<!-- 歌单的创建者 -->
+		<association property="userPo" column="userId" select="User.find"></association>
+		<!-- 歌单中的歌曲数目 -->
+		<association property="songsInListing" column="id" select="countSongsInListing"></association>
+		<!-- 歌单被收藏数目 -->
+		<association property="listingCollected" column="id" select="countListingCollected"></association>
+		<!-- 歌单的风格列表 -->
+		<collection property="styleList" column="id" select="ListingStyle.list"></collection>
+		<!-- 歌单的语言列表 -->
+		<collection property="languageList" column="id" select="ListingLanguage.list"></collection>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="songListing">   
+	    insert into song_listing(id,name,image,userId,createDate,description,playCount,isValid,version)   
+	    values (#{id},#{name},#{image},#{userId},#{createDate},#{description},#{playCount},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="songListing">   
+	    update song_listing set name=#{name},image=#{image},userId=#{userId},createDate=#{createDate},
+	    	description=#{description},playCount=#{playCount},isValid=#{isValid},version=#{version}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update song_listing set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="songListingResult" parameterType="java.lang.String">
+       <![CDATA[
+          select * from song_listing where id=#{id}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="hashmap">
+          select count(*) from song_listing 
+          <where>
+			<if test="name!=null and name!=''">
+			and name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+		  </where>
+  	</select>
+  	
+  	<!-- 得到歌单中的歌曲数目 -->
+  	<select id="countSongsInListing" resultType="java.lang.Integer" parameterType="java.lang.String">
+          select count(*) from listing_song 
+          <where>
+			 listingId=#{id}	
+		  </where>
+  	</select>
+  	
+  	<!-- 得到歌单被收藏的数目 -->
+  	<select id="countListingCollected" resultType="java.lang.Integer" parameterType="java.lang.String">
+          select count(*) from listing_collection 
+          <where>
+			 listingId=#{id}	
+		  </where>
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="hashmap" resultMap="songListingResult">
+		select * from song_listing 
+		<where>
+			<if test="name!=null and name!=''">
+			and name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+		</where>
+		<if test="orderby!=null and orderby!=''">
+			${orderby}	
+		</if>
+		<if test="orderby==null or orderby==''">
+			order by createDate desc
+		</if>
+	</select>
+	
+	<!-- 根据条件查找对应的列表 -->
+	<select id="listByFilter" parameterType="java.lang.String" resultMap="songListingResult">
+		select * from song_listing ${_parameter}		
+	</select>
+	
+</mapper>

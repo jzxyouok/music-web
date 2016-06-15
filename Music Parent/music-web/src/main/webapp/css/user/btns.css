@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+.u-btn2, .u-btn2 i, .u-btn2 .icn, .u-btni, .u-btni i, .u-btni-addply .ply {
+    background: url("../../images/other/button2.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.btns {
+	height: 30px;
+}
+.btns i {
+	font-style: normal;
+	font-size: 14px;
+}
+.btns a.gap {
+	margin-right: 10px;
+}
+/* 播放按钮 */
+.u-btn2, .u-btn2:hover {
+    text-decoration: none;
+}
+.u-btn2 {
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+}
+.u-btn2-2 {
+  		background-position: right -428px;
+  		color: #fff;
+}
+.u-btn2-2 i {
+    background-position: 0 -387px;
+    color: #fff;
+}
+.u-btn2-2:hover {
+    background-position: right -510px;
+    color: #fff;
+}
+.u-btn2-2:hover i {
+    background-position: 0 -469px;
+    color: #fff;
+}
+.u-btn2-2:active {
+    background-position: right -592px;
+    color: #fff;
+}
+.u-btn2-2:active i {
+    background-position: 0 -551px;
+    color: #fff;
+}
+.u-btn2, .u-btn2 i {
+    cursor: pointer;
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: top;
+}					
+.u-btni-addply {
+    float: left;
+}
+.u-btni-addply i {
+    padding: 0 7px 0 8px;
+}
+.u-btni-addply .ply {
+    background-position: 0 -1622px;
+    float: left;
+    height: 18px;
+    margin: 6px 2px 2px 0;
+    overflow: hidden;
+    width: 20px;
+}
+.u-btni-addply:hover .ply {
+    background-position: -28px -1622px;
+}
+.u-btni-addply:active .ply {
+    background-position: -56px -1622px;
+}
+
+/* 添加到播放列表按钮 */
+.m-info .btns .u-btni-add {
+    margin-right: 5px;
+}
+.m-info .btns2 .u-btni, .m-info .btns .u-btni {
+    font-family: simsun,宋体;
+    margin-right: 6px;
+}
+.u-btni-add {
+    background-position: 0 -1588px;
+    margin-left: -3px;
+    padding-right: 0;
+    width: 31px;
+}
+.u-btni-add:hover {
+    background-position: -40px -1588px;
+}
+.u-btni-add:active {
+    background-position: -80px -1588px;
+}
+.u-btni, .u-btni:hover {
+    color: #333;
+    text-decoration: none;
+}
+.u-btni {
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+}		
+.u-btni i {
+    padding: 0 7px 0 36px;
+}
+.u-btni, .u-btni i {
+    cursor: pointer;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+}
+
+/* 评论按钮 */		
+.u-btni-fav, .u-btni-cmmt, .u-btni-dl {
+    background-position: right -1020px;
+}
+.u-btni-fav i, .u-btni-cmmt i, .u-btni-dl i {
+    padding-left: 28px;
+    padding-right: 2px;
+}
+.u-btni-fav i {
+    background-position: 0 -977px;
+}
+.u-btni-cmmt i {
+    background-position: 0 -1465px;
+}
+.u-btni-fav:hover, .u-btni-cmmt:hover, .u-btni-dl:hover {
+    background-position: right -1106px;
+}
+.u-btni-fav:hover i {
+    background-position: 0 -1063px;
+}
+.u-btni-cmmt:hover i {
+    background-position: 0 -1508px;
+}

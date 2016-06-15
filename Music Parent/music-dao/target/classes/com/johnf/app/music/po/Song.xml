@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="Song">
+	<resultMap type="song" id="songResult">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<result property="language" column="language"/>
+		<result property="duration" column="duration"/>
+		<result property="playCount" column="playCount"/>
+		<result property="description" column="description"/>
+		<result property="audio" column="audio"/>
+		<result property="lyric" column="lyric"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="song">   
+	    insert into song(id,name,language,duration,playCount,description,audio,lyric,isValid,version)   
+	    values (#{id},#{name},#{language},#{duration},#{playCount},#{description},#{audio},#{lyric},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="song">   
+	    update song set name=#{name},language=#{language},duration=#{duration},
+	    	playCount=#{playCount},description=#{description},audio=#{audio},lyric=#{lyric},
+	    	isValid=#{isValid},version=#{version}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update song set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="songResult" parameterType="java.lang.String">
+       <![CDATA[
+          select a.*,
+			(select b.id + ',' + b.name+','+b.smallImg+' ' from singer b left join song_singer c on b.id=c.singerId 
+				where c.songId=a.id for XML path('')) as singerInfo,
+			(select b.id + ',' + b.name+' ' from album b left join album_song c on b.id=c.albumId 
+				where c.songId=a.id for XML path('')) as albumInfo
+		  from song a where id = #{id}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="hashmap">
+          select count(*) from song 
+          <where>
+          	1=1
+			<if test="name!=null and name!=''">
+			and name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and isValid = #{isValid}	
+			</if>
+		  </where>
+  	</select>
+  	
+  	<!-- 得到记录总数 -->
+  	<select id="countByFilter" resultType="java.lang.Long" parameterType="java.lang.String">
+          select count(*) from song ${_parameter}  
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="hashmap" resultMap="songResult">	
+		select a.*,
+			(select b.id + ',' + b.name+' ' from singer b left join song_singer c on b.id=c.singerId 
+				where c.songId=a.id for XML path('')) as singerInfo,
+			(select b.id + ',' + b.name+' ' from album b left join album_song c on b.id=c.albumId 
+				where c.songId=a.id for XML path('')) as albumInfo
+		from song a
+		<where>
+			<if test="name!=null and name!=''">
+			and a.name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+		  </where>		
+	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="listByFilter" parameterType="java.lang.String" resultMap="songResult">	
+		select a.*,
+			(select b.id + ',' + b.name+' ' from singer b left join song_singer c on b.id=c.singerId 
+				where c.songId=a.id for XML path('')) as singerInfo,
+			(select b.id + ',' + b.name+' ' from album b left join album_song c on b.id=c.albumId 
+				where c.songId=a.id for XML path('')) as albumInfo
+		from song a ${_parameter}		
+	</select>
+</mapper>

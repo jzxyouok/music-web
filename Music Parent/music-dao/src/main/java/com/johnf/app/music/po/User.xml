@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="User">
+	<resultMap type="user" id="userResult">
+		<id property="id" column="id" />
+		<result property="account" column="account"/>
+		<result property="password" column="password"/>
+		<result property="sex" column="sex"/>
+		<result property="headImg" column="headImg"/>
+		<result property="description" column="description"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="user">
+	    insert into [user](id,account,password,sex,headImg,description,isValid,version)   
+	    values (#{id},#{account},#{password},#{sex},#{headImg},#{description},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改-->
+	<update id="update" parameterType="user">   
+	    update [user] set password=#{password},sex=#{sex},headImg=#{headImg},
+	    	description=#{description},isValid=#{isValid},version=#{version}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update [user] set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="userResult" parameterType="java.lang.String">
+       <![CDATA[
+          select * from [user] where isValid=1 and id=#{id}
+       ]]>
+    </select>
+    
+    <!-- 详细 -->
+    <select id="findByAccountAndPassword" resultMap="userResult" parameterType="java.util.Map">
+       <![CDATA[
+          select * from [user] where isValid=1 and account=#{account} and password=#{password}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="java.lang.String">       
+          select count(*) from [user] where isValid=1 ${_parameter}
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="java.lang.String" resultMap="userResult">
+		select * from [user] where isValid=1 ${_parameter}
+	</select>
+</mapper>

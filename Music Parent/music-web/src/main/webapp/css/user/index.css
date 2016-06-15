@@ -1,0 +1,450 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:1000px;
+	min-height:1400px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-right:5px;
+	background-color: #FFFFFF;
+}
+.ui_left {
+	width:655px;
+	min-height:1400px;
+	padding-left: 30px;
+	padding-right: 50px;
+	float:left;
+}
+.ui_right {
+	width:250px;
+	float:right;
+	padding:5px;
+	background-color:#ffffff;
+	border:1px solid #ccc;
+}
+
+/* 推荐歌单部分 */
+.song_listing {
+	width:675px;
+	min-height:200px;	
+}
+
+/* 推荐歌单部分 标题 */
+.v-hd2 {
+    background-position: -240px -226px;
+    border-bottom: 2px solid #c10d0c;
+    height: 33px;
+    padding: 0;
+}
+.v-hd2 .tit {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #333;
+    text-decoration: none;
+}
+.v-hd2 .more {
+    float: right;
+    margin-top: 9px;       
+}
+.v-hd2 .more .cor, .v-hd3 .more .cor {
+    display: inline-block;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    width: 12px;
+}
+.v-hd2 .tab {
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.v-hd2 .tab .line {
+    color: #ccc;
+    margin: 0 10px;
+}
+.v-hd2 .btns {
+    float: right;
+    margin: 9px 17px 0 0;
+}
+.v-hd2 .btns a {
+    float: left;
+    height: 17px;
+    margin-left: 10px;
+    width: 17px;
+}
+
+a.s-fc3 {
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+}
+a.s-fc3:hover {
+    text-decoration: underline;
+}
+
+.s-bg, .v-hd2 {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+
+.s-bg-6 {
+    background-position: -2px -240px;
+}
+
+/* 推荐歌单具体内容部分 */
+/* 耽搁歌单总体样式 */
+.m-cvrlst {
+	margin: 0;
+	padding: 15px 0 0 0;
+	width:690px;
+}
+.m-cvrlst li {
+	list-style:none;
+	margin-left: 30px;
+	display: inline-block;
+	position: relative;
+	left:-28px;
+}
+
+.u-cover .bottom, .u-cover .msk {
+    background: url("../../images/other/coverall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.u-cover .ply, .u-cover .icon-headset, .u-cover .icon-play {
+    background: url("../../images/other/iconall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.u-cover-1 {
+    height: 140px;
+    width: 140px;
+    position: relative;
+}
+.u-cover .icon-headset {
+    background-position: 0 -24px;
+    float: left;
+    height: 11px;
+    margin: 9px 5px 9px 10px;
+    width: 14px;
+}
+.u-cover .icon-play {
+    background-position: 0 0;
+    bottom: 5px;
+    height: 17px;
+    position: absolute;
+    right: 10px;
+    width: 16px;
+}
+.u-cover .bottom {
+    background-position: 0 -537px;
+    bottom: 0;
+    color: #ccc;
+    height: 27px;
+    left: 0;    
+    position: absolute;
+    width: 100%;
+    font-size:13px;
+}
+/* 歌单收听数 */
+.u-cover .bottom .nb {
+	position: relative;
+	top:6px;
+}
+/* 歌单名样式 */
+.m-cvrlst li .dec {
+	max-width: 140px;
+	max-height: 60px;
+	margin-top: 3px;
+}
+.m-cvrlst li .dec a {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.m-cvrlst li .dec a:hover {
+	text-decoration: underline;
+}
+
+/* 新碟列表 */
+.listM {
+    position: relative;	
+	top:5px;
+	height: 190px;
+	width: 675px;
+	background-color: #F5F5F5;
+}
+.listM li {
+    display: inline;
+    float: left;
+    height: 170px;
+    padding:0;
+    margin: 0 8px;
+    overflow: hidden;
+    text-align: left;
+    width: 106px;
+}
+.listM .even_left, .listM .even_right {
+    height: 40px;
+    top: 60px;
+    width: 18px;
+    z-index: 3;    
+}
+.listM .even_left {
+	position:absolute;
+    left: 3px;
+}
+.listM .even_right {
+	position:absolute;
+    right: 3px;
+}
+.orientation {
+    background: url(../../images/other/arror.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    width: 18px;
+}
+.even_right .orientation {
+    background-position: -30px 0;
+}
+.even_center {
+	position:absolute;
+	left:25px;
+	width:633px;
+	margin-left:-11px;
+	overflow:hidden;
+}
+.even_center ul {
+	width: 2100px;
+	margin-left:-24px;
+}
+.even_center ul li {
+	font-size: 13px;
+}
+.even_center ul li a.c333 {
+	color:#333;
+	font-size:13px;
+	text-decoration: none;	
+}
+.even_center ul li a.c333:hover {
+	text-decoration: underline;
+}
+.mt5 {
+	margin-top:5px;
+}
+.mt10 {
+	margin-top:-10px;
+}
+.even_left .disable {
+    background-position: 0 -59px;
+}
+.even_right .disable {
+    background-position: -30px -59px;
+}
+
+/* 榜单 */
+.s-bg {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.s-bg-9 {
+    background-position: -267px -205px;
+}
+.s-bg-9:hover {
+    background-position: -267px -235px;
+}
+.s-bg-9-slt, .s-bg-9-slt:hover {
+    background-position: -327px -205px;
+}
+.s-bg-10 {
+    background-position: -300px -205px;
+}
+.s-bg-10:hover {
+    background-position: -300px -235px;
+}
+.s-bg-10-slt, .s-bg-10-slt:hover {
+    background-position: -330px -235px;
+}
+
+/* 榜单 */
+.ranking {
+	padding-top: 40px;
+}
+.ranking .ranks {
+	margin-top:15px;	
+	background-color: #F5F5F5;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	min-height:574px;
+	width: 675px;
+}
+/* 新歌榜 */
+.new_song_rank, .hot_song_rank {
+	width:320px;	
+	border-right: 1px solid #ccc;
+	padding-top: 15px;
+	padding-left:15px;
+}
+.new_song_rank {
+	float:left;
+}
+.hot_song_rank {
+	float:right;	
+}
+.new_song_rank .top, .hot_song_rank .top {
+	width:310px;
+	height: 110px;
+}
+.new_song_rank .u-cover, .hot_song_rank .u-cover {
+	float:left;
+	width:105px;
+}
+.new_song_rank .tit, .hot_song_rank .tit {
+	float:left;
+	margin-top: 20px;
+}
+.new_song_rank .tit .btn, .hot_song_rank .tit .btn {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.new_song_rank .tit a, .hot_song_rank .tit a {
+	padding:2px 8px;
+	width:30px;
+	min-width: 30px;
+	text-decoration: none;
+	color: #000;
+}
+.new_song_rank .tit a.title:hover, .hot_song_rank .tit a.title:hover {
+	text-decoration: underline;
+}
+.new_song_rank .rank_list, .hot_song_rank .rank_list {
+	width:310px;
+}
+/* 具体排名项 */
+.rank_item {
+	padding: 0;
+}
+.rank_item li {
+	list-style: none;
+	font-size: 14px;
+	padding: 5px;
+	position: relative;
+}
+.rank_item li span.no {
+	font-size: 18px;
+	font-weight: bold;
+	padding-right: 10px;
+}
+.rank_item li a {
+	color:#000;
+	text-decoration: none;	
+}
+.rank_item li a:hover {
+	text-decoration: underline;
+}
+.rank_item li a.nm {
+	position: absolute;
+    left:40px;
+}
+.rank_item .oper {
+    display: none;
+    float: right;
+    margin-right:5px;
+    margin-top: 2px;
+    width: 82px;    
+}
+.rank_item .oper a {
+    float: left;
+    height: 17px;
+    margin-right: 10px;
+    width: 17px;   
+}
+.rank_item .oper .u-icn-81 {
+    margin: 2px 6px 0 0;
+}
+.rank_item li.js-dis .nm {
+    color: #bbb;    
+}
+.rank_item li.z-hvr .nm, .rank_item li:hover .nm {
+    width: 150px;    
+}
+.rank_item li.z-hvr .oper {
+    display: block;
+}
+.ranks .more {
+    clear: both;
+    height: 32px;
+    width:300px;
+    line-height: 32px;
+    margin-right: 42px;
+    text-align: right;
+}
+.ranks .more a {
+	color:#000;
+	text-decoration: none;
+	font-size: 14px;
+}
+.ranks .more a:hover {
+	text-decoration: underline;
+}
+.s-bg-11 {
+    background-position: -267px -268px;
+}
+.s-bg-11:hover {
+    background-position: -267px -288px;
+}
+.s-bg-12 {
+    background-position: -297px -268px;
+}
+.s-bg-12:hover {
+    background-position: -297px -288px;
+}
+.u-icn {
+    background: url("../../images/other/icon.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-icn-81 {
+    background-position: 0 -700px;
+    height: 13px;
+    width: 13px;
+}
+
+/* 热门歌手 */
+.hot_singer h4.title {
+	height:26px;
+	line-height: 26px;
+	border-bottom: 1px solid #ccc;
+}
+.singer_list {	
+	padding: 0;
+}
+.singer_list li {
+	list-style: none;
+	width:248px;
+	height:63px;
+	background-color:#eee;
+	margin-top:20px;
+}
+.singer_list li div.head {
+	float:left;
+	width:105px;
+}
+.singer_list li div.info {
+	float:right;
+	margin-right:20px;
+	width:120px;
+	height:53px;
+	padding-top:10px; 
+	font-size:14px;
+}
+.singer_list li div.info a {
+	text-decoration: none;
+}
+.singer_list li div.info a:hover {
+	text-decoration: underline;
+}
+.singer_list li div.info span {
+	color: #000;
+}

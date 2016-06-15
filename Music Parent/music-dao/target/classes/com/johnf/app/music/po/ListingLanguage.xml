@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="ListingLanguage">
+	<resultMap type="listingLanguage" id="listingLanguageResult">
+		<id property="id" column="id" />
+		<result property="listingId" column="listingId"/>
+		<result property="language" column="language"/>
+		<result property="version" column="version"/>
+		
+		<!-- 关联的语言数据字典 -->
+		<association property="dicPo" column="language" select="selectLanguageDic"></association>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="listingLanguage">   
+	    insert into listing_language(id,listingId,language,version)   
+	    values (#{id},#{listingId},#{language},#{version})   
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from listing_language where listingId=#{listingId}
+	</delete>
+	
+	<!-- 根据歌单ID查找对应的语言列表 -->
+	<select id="list" parameterType="java.lang.String" resultMap="listingLanguageResult">
+		select * from listing_language where listingId=#{id}		
+	</select>
+	
+	<!-- 根据歌单语言的值查找对应的风格数据字典 -->
+	<select id="selectLanguageDic" parameterType="java.lang.String" resultMap="SysDic.sysDicResult">
+		select * from sysDic where value=#{language} and type='LISTING_LANGUAGE_TYPE'
+	</select>
+</mapper>

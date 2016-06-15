@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="accessory" type="com.johnf.app.music.po.AccessoryPo" />
+		<typeAlias alias="album" type="com.johnf.app.music.po.AlbumPo" />
+		<typeAlias alias="albumSinger" type="com.johnf.app.music.po.AlbumSingerPo" />
+		<typeAlias alias="albumSong" type="com.johnf.app.music.po.AlbumSongPo" />
+		<typeAlias alias="listingCollection" type="com.johnf.app.music.po.ListingCollectionPo" />
+		<typeAlias alias="listingLanguage" type="com.johnf.app.music.po.ListingLanguagePo" />
+		<typeAlias alias="listingSong" type="com.johnf.app.music.po.ListingSongPo" />
+		<typeAlias alias="listingStyle" type="com.johnf.app.music.po.ListingStylePo" />
+		<typeAlias alias="remark" type="com.johnf.app.music.po.RemarkPo" />
+		<typeAlias alias="singer" type="com.johnf.app.music.po.SingerPo" />
+		<typeAlias alias="songListing" type="com.johnf.app.music.po.SongListingPo" />
+		<typeAlias alias="song" type="com.johnf.app.music.po.SongPo" />
+		<typeAlias alias="songSinger" type="com.johnf.app.music.po.SongSingerPo" />
+		<typeAlias alias="sysDic" type="com.johnf.app.music.po.SysDicPo" />
+		<typeAlias alias="user" type="com.johnf.app.music.po.UserPo" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/johnf/app/music/po/Accessory.xml" />
+		<mapper resource="com/johnf/app/music/po/Album.xml" />
+		<mapper resource="com/johnf/app/music/po/AlbumSinger.xml" />
+		<mapper resource="com/johnf/app/music/po/AlbumSong.xml" />
+		<mapper resource="com/johnf/app/music/po/ListingCollection.xml" />
+		<mapper resource="com/johnf/app/music/po/ListingLanguage.xml" />
+		<mapper resource="com/johnf/app/music/po/ListingSong.xml" />
+		<mapper resource="com/johnf/app/music/po/ListingStyle.xml" />
+		<mapper resource="com/johnf/app/music/po/Remark.xml" />
+		<mapper resource="com/johnf/app/music/po/Singer.xml" />
+		<mapper resource="com/johnf/app/music/po/SongListing.xml" />
+		<mapper resource="com/johnf/app/music/po/Song.xml" />
+		<mapper resource="com/johnf/app/music/po/SongSinger.xml" />
+		<mapper resource="com/johnf/app/music/po/SysDic.xml" />
+		<mapper resource="com/johnf/app/music/po/User.xml" />
+	</mappers>
+</configuration>

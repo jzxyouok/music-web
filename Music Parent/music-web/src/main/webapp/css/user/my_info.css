@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:750px;
+	min-height:600px;
+	margin:0 auto;
+	padding-top: 20px;
+	padding-left: 150px;
+	padding-right:100px;
+	background-color: #FFFFFF;
+}
+
+.hd {
+	width: 600px;
+	height: 30px;
+}
+.hd .h_tl {
+    color: #7b7b7b;
+    float: left;
+    font: 20px/24px Microsoft Yahei,"宋体",sans-serif;
+    height: 24px;
+    margin-right: 10px;
+}
+.hd .h_l {
+    float: left;
+    line-height: 24px;
+}
+/* 内部导航栏 */
+.m-tabs, .m-tabs a, .m-tabs em, .m-tabs1 a, .m-tabs1 em {
+    background: url("../../images/other/tab.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.m-tabs {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px;
+    padding-left: 0;
+    height: 39px;
+    width: 638px;
+}
+.m-tabs li, .m-tabs a, .m-tabs em {
+    float: left;
+    font-size: 14px;
+    height: 39px;
+}
+.m-tabs li {
+    left: -1px;
+    position: relative;
+    list-style: none;
+	display: inline;
+}
+.m-tabs a {
+    padding-left: 2px;
+}
+.m-tabs em {
+    cursor: pointer;
+    height: 37px;
+    line-height: 37px;
+    padding: 2px 2px 0 0;
+    text-align: center;
+    width: 134px;
+    font-style: normal;
+    color: #333;
+}
+.m-tabs a:hover {
+    background-position: -5px -45px;
+    text-decoration: none;
+}
+.m-tabs em:hover {
+    background-position: right -45px;
+}
+.m-tabs li.fst a:hover {
+    background-position: left -45px;
+}
+.m-tabs a.z-slt {
+    background-position: left -90px;
+}
+.m-tabs a.z-slt em {
+    background-position: right -90px;
+}

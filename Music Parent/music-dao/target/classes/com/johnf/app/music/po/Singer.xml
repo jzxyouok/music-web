@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="Singer">
+	<resultMap type="singer" id="singerResult">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<result property="abbr" column="abbr"/>
+		<result property="category" column="category"/>
+		<result property="smallImg" column="smallImg"/>
+		<result property="bigImg" column="bigImg"/>
+		<result property="type" column="type"/>
+		<result property="sex" column="sex"/>
+		<result property="description" column="description"/>
+		<result property="bankDescription" column="bankDescription"/>
+		<result property="isValid" column="isValid"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="singer">   
+	    insert into singer(id,name,abbr,category,smallImg,bigImg,type,sex,description,bankDescription,isValid,version)   
+	    values (#{id},#{name},#{abbr},#{category},#{smallImg},#{bigImg},#{type},#{sex},
+	    	#{description},#{bankDescription},#{isValid},#{version})   
+	</insert>
+	
+	<!-- 修改 -->
+	<update id="update" parameterType="singer">   
+	    update singer set name=#{name},abbr=#{abbr},category=#{category},smallImg=#{smallImg},
+	    	bigImg=#{bigImg},type=#{type},sex=#{sex},description=#{description},
+	    	bankDescription=#{bankDescription},isValid=#{isValid},version=#{version}
+	    where id=#{id}
+	</update>
+	
+	<!-- 更改状态 -->
+	<update id="updateState" parameterType="java.util.Map">   
+	    update singer set isValid=#{isValid} where id = #{id}   
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="singerResult" parameterType="java.lang.String">
+       <![CDATA[
+          select * from singer where id=#{id}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="hashmap">
+          select count(*) from singer
+          <where>
+			<if test="name!=null and name!=''">
+			and name like #{name}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+		  </where>
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="hashmap" resultMap="singerResult">
+		select a.id,a.name,a.smallImg,a.isValid as isValid, b.name as type from singer a 
+		left join sysDic b on a.category=b.value
+		<where>			
+			<if test="name!=null and name!=''">
+			and a.name like #{name}	
+			</if>
+			<if test="category!=null and category!=''">
+			and a.category = #{category}	
+			</if>
+			<if test="abbr!=null and abbr!=''">
+			and a.abbr = #{abbr}	
+			</if>
+			<if test="isValid!=null and isValid!=''">
+			and a.isValid = #{isValid}	
+			</if>
+		 </where>
+	</select>
+	
+	<!-- 根据条件查找对应的列表 -->
+	<select id="listByFilter" parameterType="java.lang.String" resultMap="singerResult">
+		select a.id,a.name,a.smallImg,a.isValid as isValid, b.name as type from singer a 
+		left join sysDic b on a.category=b.value
+		${_parameter}
+	</select>
+</mapper>

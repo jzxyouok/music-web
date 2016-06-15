@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+   <constant name="struts.locale" value="zh_CN"></constant>
+   <constant name="struts.objectFactory" value="spring"></constant>
+   <constant name="struts.multipart.maxSize" value="1000000000"></constant>
+   <constant name="struts.devMode" value="true"></constant>
+   <!-- 
+   <constant name="struts.custom.i18n.resources" value="messageResource" />
+    -->
+   
+   <!-- 配置项目的基础包，其它配置文件都应继承这个基础包 -->
+   <package name="struts-base" extends="struts-default">
+      <interceptors>
+      	<interceptor name="checkLogin" class="com.johnf.app.music.util.CheckLogin"></interceptor>
+         <interceptor-stack name="mydefault">
+         	<interceptor-ref name="checkLogin"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+         </interceptor-stack>
+      </interceptors>
+      <default-interceptor-ref name="mydefault"></default-interceptor-ref>
+      <global-results>
+         <result name="exceptions" type="redirect">/common/exception.html</result>
+         <result name="logout" type="redirect">/common/session.jsp</result>
+      </global-results>
+   </package>
+   
+   <!-- **************** 系统管理模块**************** -->
+   <!-- 系统用户action -->
+   <include file="struts-sysUser.xml"></include>
+   <!-- 后台评论管理action -->
+   <include file="struts-sysRemark.xml"></include>
+   <!-- 后台歌手管理action -->
+   <include file="struts-sysSinger.xml"></include>
+   <!-- 后台专辑管理action -->
+   <include file="struts-sysAlbum.xml"></include>
+   <!-- ajax文件上传管理action -->
+   <include file="struts-upload.xml"></include>
+   <!-- 后台歌单管理action -->
+   <include file="struts-sysSongListing.xml"></include>
+   <!-- 后台歌曲管理action -->
+   <include file="struts-sysSong.xml"></include>
+   <!-- 后台数据字典管理action -->
+   <include file="struts-sysDic.xml"></include>
+   
+   <!-- **************** 前端模块**************** -->
+   <!-- 前端首页action -->
+   <include file="struts-index.xml"></include>
+   <!-- 前端专辑action -->
+   <include file="struts-album.xml"></include>
+   <!-- 前端歌手action -->
+   <include file="struts-singer.xml"></include>
+   <!-- 前端歌曲action -->
+   <include file="struts-song.xml"></include>
+   <!-- 前端歌单action -->
+   <include file="struts-songListing.xml"></include>
+   <!-- 前端用户action -->
+   <include file="struts-user.xml"></include>
+   <!-- 前端评论action -->
+   <include file="struts-remark.xml"></include>
+</struts>

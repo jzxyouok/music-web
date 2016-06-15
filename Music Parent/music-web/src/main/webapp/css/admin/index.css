@@ -1,0 +1,29 @@
+body { font-family:Verdana; font-size:14px; margin:2;}
+
+#container {margin:0 auto; width:100%; height:100%; overflow: hidden; background: none repeat scroll 0 0 #fff;  overflow: hidden; }
+#header { height:55px; width:1200px;background:#eb6120; padding-top: 10px;  margin: 0 auto 5px auto;}
+#mainContent { height:500px; width:1200px; margin: 0 auto 5px auto;}
+#sidebar { float:left; width:200px; height:820px; background:#ddd;}
+#content { float:left; width:1000px; height:820px; background:#EFEFEF; margin: 0 auto;}
+#footer { height:120px; width:100%; background:#6cf;}
+
+body,td,th {font-size: 18px;color: #FFFFFF;font-weight: bold;}                                                                                                                 
+.STYLE2 {font-size: 12px;}
+.STYLE4 {font-size: 16px; cursor:pointer; text-decoration:none; float:right; margin-right: 20px;}
+#header h4 {
+	float: right;	
+	margin-right:-170px;
+	position: relative;
+	top: 3px;
+}
+#header a {
+	text-decoration: none;
+	color: #fff;
+}
+#header a:hover {
+	text-decoration: underline;
+}
+
+#menuDiv {width:200px;border:1px solid skyblue;}		
+#menuDiv .menu {background-color: skyblue;color: white;line-height: 40px;font-size: 14px;font-weight: bold;padding-left: 5px;}			
+#menuDiv .menu_item a {text-decoration:none;line-height: 30px;display: block;margin-left: 8px;}

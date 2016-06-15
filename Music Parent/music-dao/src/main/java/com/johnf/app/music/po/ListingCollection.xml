@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="ListingCollection">
+	<resultMap type="listingCollection" id="listingCollectionResult">
+		<id property="id" column="id" />
+		<result property="listingId" column="listingId"/>
+		<result property="userId" column="userId"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="listingCollection">   
+	    insert into listing_collection(id,listingId,userId,version)   
+	    values (#{id},#{listingId},#{userId},#{version})   
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from listing_collection where listingId=#{listingId} and userId=#{userId}
+	</delete>
+</mapper>

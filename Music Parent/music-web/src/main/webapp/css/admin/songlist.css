@@ -1,0 +1,151 @@
+@CHARSET "UTF-8";
+.content { width: 910px; margin: 50px auto 0 auto;}
+h2.tit { text-align: center; }
+.f-fl {float:left;}
+.f-ff2 {float:right;}
+/* 评论列表 */
+.song-list {
+	width: 900px;
+	margin-top:40px;
+}
+.song-list .u-title .hd {
+	font-size:18px;
+	font-weight: bold;
+}
+.song-list .sub {
+	margin-left: 10px;
+	margin-top: 0px;
+	font-size: 18px;
+}
+.song-list .u-title {
+	height: 30px;
+	border-bottom: 2px solid #C20C0C;
+}
+.song-list .u-title select {
+	height: 26px;
+}
+.song-list .u-title option {
+	height: 22px;
+	padding-top: 4px;
+}
+
+/* 评论项表格 */
+.m-table {
+	width: 900px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.m-table td, .m-table th {
+	min-width: 70px;
+}
+.m-table tr {
+	height:40px;
+}
+.m-table th {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;	
+}
+#m-song-list-module td {
+	padding-left: 5px;
+	font-size: 14px;
+	color:#333;
+	text-align: center;
+}
+#m-song-list-module td.first_td {
+	width:70px;
+}
+#m-song-list-module td.second_td {
+	width:140px;
+}
+#m-song-list-module td.third_td {
+	width:160px;
+}
+#m-song-list-module td.fourth_td {
+	width:220px;
+}
+#m-song-list-module td.fifth_td {
+	width:120px;
+}
+#m-song-list-module a {
+	text-decoration: none;
+	color:#333;
+}
+#m-song-list-module a:hover {
+	text-decoration: underline;
+}
+.m-table .ply {
+    background-position: 0 -204px;
+    height: 36px;
+    margin-top: 0;
+    width: 36px;
+}
+.m-table .ply:hover {
+    background-position: -40px -204px;
+}
+.s-bg {
+    background: url("../../images/other/index.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.s-bg-11 {
+    background-position: -267px -268px;
+}
+.s-bg-11:hover {
+    background-position: -267px -288px;
+}
+.s-bg-12 {
+    background-position: -297px -268px;
+}
+.s-bg-12:hover {
+    background-position: -297px -288px;
+}
+.u-icn-81 {
+    background-position: 0 -700px;
+    height: 13px;
+    width: 13px;
+}
+.f-cb .opt {
+	float: right;
+	margin-top: -15px;
+}
+.f-cb .opt span {
+	width:20px;
+	display: inline-block;
+	cursor: pointer;
+}
+.ztag .left .playBtn {
+	width:20px;
+	display: inline-block;
+	margin-left: 25px;
+	cursor: pointer;
+}
+
+/* 编辑歌曲弹出框 */
+.editAlbumTable tr {
+	height: 50px;
+	font-size: 13px;
+}
+.editAlbumTable input[type='text'], .editAlbumTable input[type='file'] {
+	height: 24px;
+	width: 200px;
+} 
+/* 按钮 */
+.editAlbumTable .btn {
+    background-color: #eb6120;
+    border: medium none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    height: 28px;
+    width: 100px;    
+}
+.redBt {
+    background-color: #eb6120;
+    border-radius: 3px;
+    color: #fff;
+    height: 30px;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+.redBt:hover {
+    background-color: #fe7600;
+}

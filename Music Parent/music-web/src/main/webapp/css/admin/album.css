@@ -1,0 +1,193 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_left {
+	width:810px;
+	min-height:770px;
+	padding-left: 30px;
+	padding-right: 50px;	
+	float:left;
+}
+.f-fl {
+	float:left;
+}
+.f-ff2 {
+	float:right;
+}
+
+/* 专辑信息 */
+.m-info {
+	margin-top: 20px;
+	margin-left: 10px;
+	height: 180px;
+}
+.m-info .cnt {
+	margin-left: 40px;
+}
+.u-icn {
+    background: url("../../images/other/icon.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-icn-16 {
+    background-position: 0 -186px;
+    height: 24px;
+    width: 54px;
+}
+
+.u-btn {
+    background: url("../../images/other/button.png") no-repeat scroll 0 9999px rgba(0, 0, 0, 0);
+}
+.u-btn-crt {
+    background-position: 0 -96px;
+    height: 22px;
+    width: 62px;
+    font-size: 13px;
+	color: #666;
+	font-weight: normal;
+	text-decoration: none;
+	margin-right: -30px;
+	padding-left: 20px;
+	padding-top: 3px;
+}
+.u-btn-crt:hover {
+    background-position: -94px -39px;
+    text-decoration: none;
+}
+
+.cnt {
+	color: #333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+.cnt .hd {
+	width: 400px;
+	height: 30px;
+	clear: both;
+}
+.cnt .hd i {
+	width: 60px;
+	display: inline-block;
+}
+.cnt .hd .title {
+	font-size: 24px;
+	font-weight: bold;
+}
+.cnt .topblk {
+	width: 410px;
+}
+a.s-fc7 {
+	color: #0c73c2;
+	text-decoration: none;
+}
+a.s-fc7:hover {
+	text-decoration: underline;
+}
+.n-albdesc p.f-brk {
+	margin-top: -10px;
+	margin-left: 2em;
+	font-size: 14px;
+	color: #333;
+	line-height: 23px;
+}
+
+/* 歌曲列表 */
+.song_list {
+	width: 803px;
+	margin-top:25px;
+}
+.song_list .u-title .hd {
+	font-size:22px;
+	font-weight: bold;
+}
+.song_list .sub {
+	margin-left: 10px;
+	margin-top: 4px;
+	font-size: 13px;
+}
+.song_list .u-title {
+	height: 30px;
+	border-bottom: 2px solid #C20C0C;
+}
+.m-table {
+	width: 800px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.m-table td, .m-table th {
+	min-width: 70px;
+}
+.m-table tr {
+	height:30px;
+}
+.m-table th {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;	
+}
+#m-song-list-module td {
+	padding-left: 5px;
+	font-size: 14px;
+	color:#333;
+	text-align:center;
+}
+#m-song-list-module td.first_td {
+	width:70px;
+}
+#m-song-list-module td.second_td {
+	width:250px;
+}
+#m-song-list-module td.third_td {
+	width:70px;
+}
+#m-song-list-module td.fourth_td {
+	width:120px;
+}
+#m-song-list-module td.fifth_td {
+	width:120px;
+}
+#m-song-list-module td.sixth_td {
+	width:100px;
+}
+#m-song-list-module a {
+	text-decoration: none;
+	color:#333;
+}
+#m-song-list-module a:hover {
+	text-decoration: underline;
+}
+#m-song-list-module td.sixth_td a {
+	margin-left: 10px;
+}
+
+/* 添加歌曲弹出框 */
+.addAlbumTable tr {
+	height: 40px;
+	font-size: 13px;
+}
+.addAlbumTable input[type='text'], .addAlbumTable input[type='file'] {
+	height: 24px;
+	width: 200px;
+} 
+/* 按钮 */
+.addAlbumTable .btn {
+    background-color: #eb6120;
+    border: medium none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    height: 28px;
+    width: 100px;    
+}
+.redBt {
+    background-color: #eb6120;
+    border-radius: 3px;
+    color: #fff;
+    height: 30px;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+.redBt:hover {
+    background-color: #fe7600;
+}

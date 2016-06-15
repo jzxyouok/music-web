@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+<mapper namespace="SysDic">
+	<resultMap type="sysDic" id="sysDicResult">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<result property="value" column="value"/>
+		<result property="type" column="type"/>
+		<result property="seqnum" column="seqnum"/>
+		<result property="version" column="version"/>
+	</resultMap>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="sysDic">   
+	    insert into sysDic(id,name,value,type,seqnum,version)   
+	    values (#{id},#{name},#{value},#{type},#{seqnum},#{version})   
+	</insert>
+	
+	<!-- 修改-->
+	<update id="update" parameterType="sysDic">   
+	    update sysDic set value=#{value},type=#{type},
+	    	version=#{version},seqnum=#{seqnum}
+	    where id=#{id}
+	</update>
+	
+	<!-- 详细 -->
+    <select id="find" resultMap="sysDicResult" parameterType="java.lang.String">
+       <![CDATA[
+          select * from sysDic where id=#{id}
+       ]]>
+    </select>
+
+	<!-- 得到记录总数 -->
+  	<select id="count" resultType="java.lang.Long" parameterType="hashmap">
+          select count(*) from sysDic 
+          <where>
+          	1=1
+			<if test="type!=null and type!=''">
+			and type=#{type}	
+			</if>
+			<if test="filter!=null and filter!=''">
+				${filter}	
+			</if>
+		  </where>
+  	</select>
+
+	<!-- 根据条件查找对应的列表 -->
+	<select id="list" parameterType="java.lang.String" resultMap="sysDicResult">
+		select * from sysDic 
+		<where>
+          	1=1
+			<if test="type!=null and type!=''">
+			and type=#{type}	
+			</if>
+			<if test="filter!=null and filter!=''">
+				${filter}	
+			</if>
+		 </where>
+		 order by type asc
+	</select>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from sysDic where id=#{listingId}
+	</delete>
+	
+	<!-- 删除 -->
+	<delete id="deleteById" parameterType="java.lang.String">
+		delete from sysDic where id=#{id}
+	</delete>
+</mapper>

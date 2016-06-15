@@ -1,0 +1,126 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #F5F5F5;
+}
+
+/* 主体部分 */
+.ui_layout {
+	width:960px;
+	min-height:1400px;
+	margin:0 auto;
+	padding: 40px 40px 0 40px;
+	background-color: #FFFFFF;
+}
+
+/* 推荐歌单部分 */
+.song_listing {
+	height:485px;
+	margin-top: 25px;
+}
+
+/* 推荐歌单部分 标题 */
+.v-hd2 {
+    background-position: -240px -226px;
+    border-bottom: 2px solid #c10d0c;
+    height: 33px;
+    padding: 0;
+    position: relative;
+}
+.v-hd2 .tit {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    left: 0;
+}
+.v-hd2 .tab {
+    float: left;
+    margin: 7px 0 0 120px;
+}
+.v-hd2 .tab .line {
+    color: #ccc;
+    margin: 0 10px;
+}
+.v-hd2 .btns {
+    float: right;
+    margin: 9px 17px 0 0;
+}
+.v-hd2 .btns a {
+    float: left;
+    height: 17px;
+    margin-left: 10px;
+    width: 17px;
+}
+
+a.s-fc3 {
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+}
+a.s-fc3:hover {
+    text-decoration: underline;
+}
+
+
+ul.album_ul {			
+	padding-left: 0px;
+}
+ul.album_ul li {
+	display: inline;
+    float: left;
+    height: 190px;
+    padding:0;		   
+    overflow: hidden;
+    text-align: left;
+    width: 134px;
+	margin-right: 45px;
+	margin-bottom: 20px;
+}
+ul.album_ul li a.c333 {
+	color:#333;
+	text-decoration: none;
+}
+ul.album_ul li a.c333:hover {
+	text-decoration: underline;
+}
+.mt5 {
+	margin-top:5px;
+}
+.mt10 {
+	margin-top:10px;
+}
+p.mt10 a {
+	font-size: 14px;
+}
+.u-cover img {
+	padding:2px;
+	border:1px solid #aaa;
+	cursor: pointer;
+}
+.u-cover .icon-play {
+    background: url("../../images/other/iconall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}		
+.u-cover .icon-play {
+    display: inline-block;
+}
+.u-cover {
+	position: relative;
+}
+.u-cover .icon-play {
+    background-position:100px 10px;
+    bottom: 15px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    width: 25px;
+    text-decoration: none;
+}
+
+
+.hot_album .album_ul {
+	min-height: 390px;
+	clear: both;
+}

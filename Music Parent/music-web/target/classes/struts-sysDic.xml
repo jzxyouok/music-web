@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysDic" namespace="/sys" extends="struts-base">
+		<!-- 后台数据字典管理action -->
+		<action name="sysDic_*" class="sysDicAction" method="{1}">
+			<result name="list">/system/dic/list.jsp</result>
+			<result name="add">/system/dic/add.jsp</result>
+			<result name="update">/system/dic/update.jsp</result>
+			<result name="updateSuccess" type="chain">sysDic_list</result>
+			<result name="addSuccess" type="chain">sysDic_list</result>
+		</action>
+		
+	</package>
+</struts>

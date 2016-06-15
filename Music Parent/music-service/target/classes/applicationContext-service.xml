@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.1.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+         http://www.springframework.org/schema/tx 
+         http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	<!-- 业务逻辑成部分 -->
+	<bean id="userService" class="com.johnf.app.music.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+		<property name="songListingDao" ref="songListingDao" />
+	</bean>
+	<bean id="albumService" class="com.johnf.app.music.service.impl.AlbumServiceImpl">
+		<property name="albumDao" ref="albumDao" />
+		<property name="albumSingerDao" ref="albumSingerDao" />
+	</bean>
+	<bean id="remarkService" class="com.johnf.app.music.service.impl.RemarkServiceImpl">
+		<property name="remarkDao" ref="remarkDao" />		
+	</bean>
+	<bean id="singerService" class="com.johnf.app.music.service.impl.SingerServiceImpl">
+		<property name="singerDao" ref="singerDao" />		
+	</bean>
+	<bean id="songService" class="com.johnf.app.music.service.impl.SongServiceImpl">
+		<property name="songDao" ref="songDao" />
+		<property name="albumSongDao" ref="albumSongDao" />
+		<property name="songSingerDao" ref="songSingerDao" />
+	</bean>
+	<bean id="songListingService" class="com.johnf.app.music.service.impl.SongListingServiceImpl">
+		<property name="songListingDao" ref="songListingDao" />
+		<property name="listingLanguageDao" ref="listingLanguageDao" />
+		<property name="listingStyleDao" ref="listingStyleDao" />
+	</bean>
+	<bean id="sysDicService" class="com.johnf.app.music.service.impl.SysDicServiceImpl">
+		<property name="sysDicDao" ref="sysDicDao" />		
+	</bean>
+	<bean id="listingSongService" class="com.johnf.app.music.service.impl.ListingSongServiceImpl">
+		<property name="listingSongDao" ref="listingSongDao" />		
+	</bean>
+	<bean id="listingCollectionService" class="com.johnf.app.music.service.impl.ListingCollectionServiceImpl">
+		<property name="listingCollectionDao" ref="listingCollectionDao" />		
+	</bean>
+</beans>
